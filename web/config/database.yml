@@ -3,13 +3,13 @@
 #
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
-#
+#    마크업 언어 아님     들여쓰기 해야함(탭사용 불가    띄어쓰기 2번 사용)
 default: &default
   adapter: sqlite3
   pool: 5
   timeout: 5000
 
-development:
+development:        #개발 환경설정
   <<: *default
   database: db/development.sqlite3
 
@@ -17,9 +17,9 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
+  <<: *default            #테스트 환경설정
   database: db/test.sqlite3
 
 production:
-  <<: *default
+  <<: *default          #배포 환경 설정
   database: db/production.sqlite3
