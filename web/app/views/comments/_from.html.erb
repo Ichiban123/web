@@ -1,7 +1,9 @@
 <%= form_for([@article, @article.comments.build]) do |f| %>
+  <%#블록 변수f%>
     <p>
       <%= f.label :commenter %><br>
       <%= f.text_field :commenter %>
+      <%#commenter필드f%>
     </p>
     <p>
       <%= f.label :body %><br>

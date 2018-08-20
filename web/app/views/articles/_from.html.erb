@@ -1,5 +1,7 @@
-<%= form_for @article do |f| %>
- 
+<%= form_for @article do |f| %><%#아티클 모델과 코드 연동%>
+
+  <%#공통 부분을 부분 템플릿으로 만들어 사용 이름앞에 _붙어야함%>
+
     <% if @article.errors.any? %>
       <div id="error_explanation">
         <h2>
@@ -12,8 +14,10 @@
           <% end %>
         </ul>
       </div>
-    <% end %>
-   
+    <% end %> <%#위는 오류 낫을떄 표시하는 코드%>
+
+
+    
     <p>
       <%= f.label :title %><br>
       <%= f.text_field :title %>
@@ -24,7 +28,7 @@
       <%= f.text_area :text %>
     </p>
    
-    <p>
+    <p> 
       <%= f.submit %>
     </p>
    

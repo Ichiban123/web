@@ -1,5 +1,5 @@
 <%= form_for :article, url: articles_path do |f| %>
- 
+  <%#아티클모델로 articles_path로 전송 %>
   <% if @article.errors.any? %>
     <div id="error_explanation">
       <h2>
