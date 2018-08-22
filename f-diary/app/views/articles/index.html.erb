@@ -1,0 +1,27 @@
+<h1>Listing Articles</h1>
+<%= link_to 'New article', new_article_path %>
+<table>
+  <tr>
+    <th>제목</th>
+    <th>내용</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @articles.each do |article| %>
+    <%#페이지를 디자인 하고 데이터를 넣고 싶은 장소를 설정함%>
+    <tr>
+    1
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= link_to '보기', article_path(article) %></td>
+      <td><%= link_to '수정', edit_article_path(article) %></td>
+      <td><%= link_to '삭제', article_path(article),
+              method: :delete,
+              data: { confirm: '기사 지웁니다?' } %></td>
+    </tr>  
+    
+    <% end %>
+  <%a=1 
+    result=a+1 %>
+    <%=result%>
+</table>
