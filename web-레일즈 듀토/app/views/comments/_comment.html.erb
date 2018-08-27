@@ -1,0 +1,15 @@
+<p>
+  <strong>Commenter:</strong>
+  <%= comment.commenter %>
+</p>
+ 
+<p>
+  <strong>Comment:</strong>
+  <%= comment.body %>
+</p>
+ 
+<p>
+  <%= link_to '코멘트 삭제', [comment.article, comment],
+               method: :delete,
+               data: { confirm: '코멘트 지웁니다?' } %>
+</p>
