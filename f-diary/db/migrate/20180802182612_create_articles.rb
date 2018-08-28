@@ -3,6 +3,7 @@ class CreateArticles < ActiveRecord::Migration
     create_table :articles do |t|
       t.string :title
       t.text :text        #필드
+      t.text :calorie
       #데이터형 필드이름 필드플래그
       t.timestamps null: false
     end

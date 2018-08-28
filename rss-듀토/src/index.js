@@ -4,31 +4,51 @@ import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search'; //YTSearch-함수같은것
 
 import SearchBar from './components/search_bar';//함수찾아서 임포트-실제주소를 써줘야됨(라이브러리에서 가져오는게 아님-npm 설치가아닌거)
-const API_KEY =''
+
+import VideoList from './components/video_list';
+
+const API_KEY ='AIzaSyCkeBl5uuBD9p8hXDARaQZrdsgQ-munAxk'
 //패키지 동작방식- 1 요소-검색어 오브젝트,api키
 
 //스테이트를 기록해 비디오 리스트 추적--스테이트를 사용하려면 클래스 기반 컴포넌트 필요
-class App extends Comment{ //컴포넌트 상속 --앱이 시작하면 인스턴스를 가져와 컨스트럭트 함수를 실행-바로 검색시작
+//스테이트에 비디오를 빈배열로 세팅 
+//컴포넌트 상속 --앱이 시작하면 인스턴스를 가져와 컨스트럭트 함수를 실행-바로 검색시작
+class App extends Comment{ 
     constructor(props){
         super(props);
 
-        this.state={ videos: [] }; //스테이트에 비디오를 빈배열로 세팅 
+        this.state={ videos: [] }; //빈 배열에서 채줘져서 순간 0에서 시작하는게 보임
 
-        YTSearch({key: API_KEY, term: 'surfboards'},(videos) => {//콜백함수로 비디오 리스트를 반화 하는 데이터 
-            this.setState({ videos }); //오브젝트 넘기기- 새로운 비디오 리스트에 대한 스테이트르 업데이트
-               //this.setState({ videos: videos }); 데이터가 같으면 es6에서 생략가능 
+        YTSearch({key: API_KEY, term: 'surfboards'},(videos) => {
+            this.setState({ videos }); 
+              
         });
-    }//컴포넌트가 랜더링 되면서 검색을 실행하고 , 검색이 완료되면 비디오 값을 업데이트
+    }
 
 
     render() {
-    return (<div>
-        <SearchBar />
-       </div>
+    return (
+        <div>
+            <SearchBar />
+            <VideoList videos={this.state.videos} /> 
+        </div>
        );
     }
 }
-//변하지않으므로 const로 변수선언 ㅇ
+
+ReactDOM.render(<App />, document.querySelector('.container'));
+//콜백함수로 비디오 리스트를 반화 하는 데이터 
+
+//오브젝트 넘기기- 새로운 비디오 리스트에 대한 스테이트르 업데이트
+
+ //this.setState({ videos: videos }); 데이터가 같으면 es6에서 생략가능 
+
+//컴포넌트가 랜더링 되면서 검색을 실행하고 , 검색이 완료되면 비디오 값을 업데이트
+//첫 랜더링 -surfbords 를 검색해서 반환값 얻음
+
+//App에서 비디오 리스트 전달
+
+//변하지않으므로 const로 변수선언
 
 //햐향데이터 플로우-모든 부모 컴포넌트는 데이터를 가져올 권리를 가짐-   상위컴포넌트는 데이터를 가지고 오는 것을 전담
 //1.컴포넌트 생성- 컴포넌트는 html만듬
@@ -49,7 +69,7 @@ class App extends Comment{ //컴포넌트 상속 --앱이 시작하면 인스턴
 //2.이 컴포넌트가 만든 html을 가져가서 페이지에 적용해라(dom안에)
 
 //ReactDOM.render(App);   클래스를 주고 있음 - 인스턴스로 바꿔줘야함
-ReactDOM.render(<App />,document.querySelector('.container'));
+
  
 
 

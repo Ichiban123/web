@@ -19,6 +19,9 @@ class ArticlesController < ApplicationController
     def edit
       @article = Article.find(params[:id])#매개변수 값 추출
     end
+    def list
+      @article = Article.all
+    end
    
     def create
       @article = Article.new(article_params) #해시로 추출된값을 생성자에 넣어 객체를 생성함
