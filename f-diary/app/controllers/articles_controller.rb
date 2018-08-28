@@ -64,6 +64,6 @@ class ArticlesController < ApplicationController
    
     private #액션으로 호출되지 않음  - 필터
       def article_params
-        params.require(:article).permit(:title, :text)
+        params.require(:article).permit(:name, :fodd, :calorie)
       end#입력 받은데이터(post) 추출
   end

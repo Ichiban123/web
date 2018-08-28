@@ -11,8 +11,9 @@
     <%#페이지를 디자인 하고 데이터를 넣고 싶은 장소를 설정함%>
     <tr>
     1
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
+      <td><%= article.name %></td>
+      <td><%= article.food %></td>
+      <td><%= article.calorie %></td>
       <td><%= link_to '보기', article_path(article) %></td>
       <td><%= link_to '수정', edit_article_path(article) %></td>
       <td><%= link_to '삭제', article_path(article),
