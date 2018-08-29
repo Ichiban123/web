@@ -27,6 +27,8 @@ class App extends Comment{
 
 
     render() {
+        //this.props 전달받음
+
     return (
         <div>
             <SearchBar />
