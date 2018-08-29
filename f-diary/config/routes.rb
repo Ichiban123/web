@@ -1,6 +1,8 @@
 Rails.application.routes.draw do #restful 인터페이스
   get 'welcome/index'
 
+  resources :member
+
   resources :articles do  
     #url 패턴을 나타냄  뷰아래 코멘트와 아티클
     resources :comments
