@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
     def new
       @article = Article.new
     end
-   
+    
     def edit
       @article = Article.find(params[:id])#매개변수 값 추출
     end
@@ -51,7 +51,7 @@ class ArticlesController < ApplicationController
     #  @article= Article.new
     #end
 
-   # def form_tag#모델에 특성화된 입력 양식
+   # def form_tag#모델에 특성화된 입력 양식  sdf
     #  @article= Article.new
    # end
     private #액션으로 호출되지 않음  - 필터
