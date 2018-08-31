@@ -12,7 +12,13 @@ class MemberController < ApplicationController
     end
 
     def create
+        @member = Member.new(member_params)
 
+        if @member.save
+            redirect_to @member 
+          else
+            render 'new'
+        end
     end
 
     def edit
@@ -20,7 +26,13 @@ class MemberController < ApplicationController
     end
 
     def update
-
+        @member = Member.find(params[:id])
+   
+      if @member.update(member_params)
+        redirect_to @member
+      else
+        render 'edit'
+      end
     end
   
     def destroy
@@ -29,5 +41,8 @@ class MemberController < ApplicationController
    
       redirect_to member_path
     end
-
+    private 
+    def member_params
+      params.require(:member).permit(:title, :text)
+    end
 end
