@@ -17,7 +17,7 @@ class App extends Comment{
     constructor(props){
         super(props);
 
-        this.state={ videos: [] }; //빈 배열에서 채줘져서 순간 0에서 시작하는게 보임
+        this.state={ videos: [] }; //빈 배열에서 채줘져서 순간 0에서 시작하는게 보임 ----서퍼보드 아이템
 
         YTSearch({key: API_KEY, term: 'surfboards'},(videos) => {
             this.setState({ videos }); 

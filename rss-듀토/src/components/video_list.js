@@ -4,7 +4,7 @@ import React from 'react';
 
 import VideoListItem from './video_list_item';
 
-const VideoList = (props) => {
+const VideoList = (props) => {  
     const videoItems = props.video.map((video) => {//넘겨받은 props를 video_list_item에 반환
         return <VideoListItem key={video.etag} video={video} />
     });//key={video.etag} -리스트 하나한에 키 부여- 개별업데이트할수 있어 -프로세스 빨라짐
