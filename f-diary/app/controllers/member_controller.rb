@@ -1,4 +1,5 @@
 class MemberController < ApplicationController
+    
     def index
         @member = Member.all
     end
@@ -43,6 +44,6 @@ class MemberController < ApplicationController
     end
     private 
     def member_params
-      params.require(:member).permit(:title, :text)
+      params.require(:member).permit(:id, :password ,:food,:calorie,:date,:bld)
     end
 end

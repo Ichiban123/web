@@ -8,7 +8,7 @@
         <%= pluralize(@article.errors.count, "error") %> prohibited
         this article from being saved:
       </h2>
-      <ul>
+      <ul>  
         <% @member.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>

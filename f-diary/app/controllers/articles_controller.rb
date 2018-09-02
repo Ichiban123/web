@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   http_basic_authenticate_with name: "aaa", password: "aaaa", only: :destroy
     #스캐폴딩  컨트롤러 클래스
+   
     def index
       @articles = Article.all
       #@템플릿 변수   로직과 디자인을 결합   erb 와 rb
