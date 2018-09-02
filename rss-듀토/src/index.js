@@ -7,6 +7,8 @@ import SearchBar from './components/search_bar';//함수찾아서 임포트-실�
 
 import VideoList from './components/video_list';
 
+import VideoDetail from './components/video_detail';
+
 const API_KEY ='AIzaSyCkeBl5uuBD9p8hXDARaQZrdsgQ-munAxk'
 //패키지 동작방식- 1 요소-검색어 오브젝트,api키
 
@@ -25,13 +27,14 @@ class App extends Comment{
         });
     }
 
-
+//비디오 불러오라는 요청을 하는 동안 랜더링  -- 정의되지 않은 상태에서 랜더링됨
     render() {
         //this.props 전달받음
 
     return (
         <div>
             <SearchBar />
+            <VideoDetail video={this.state.videos[0]}/>
             <VideoList videos={this.state.videos} /> 
         </div>
        );
