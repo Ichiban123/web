@@ -1,20 +1,20 @@
 <p>
-  <strong>Title:</strong>
+  <strong>제목:</strong>
   <%= @article.title %>
 </p>
  
 <p>
-  <strong>Text:</strong>
+  <strong>내용:</strong>
   <%= @article.text %>
 </p>
  
-<h2>Comments</h2>
+<h2>코멘트</h2>
 <%= render @article.comments %>
  
-<h2>Add a comment:</h2>
+<h2>코멘트 추가:</h2>
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
-    <%= f.label :commenter %><br>
+    <%= f.label :코멘터 %><br>
     <%= f.text_field :commenter %>
   </p>
   <p>
@@ -26,5 +26,5 @@
   </p>
 <% end %>
  
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<%= link_to '수정', edit_article_path(@article) %> |
+<%= link_to '뒤로', articles_path %>

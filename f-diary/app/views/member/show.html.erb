@@ -1,10 +1,15 @@
+
 <p>
-  <strong>Title:</strong>
-  <%= @member.id %>
+  <strong>음식이름:</strong>
+  <%= @member.food %>
 </p>
  
 <p>
-  <strong>Text:</strong>
-  <%= @member.password %>
+  <strong>칼로리:</strong>
+  <%= @member.calorie %>
 </p>
  
+<% end %>
+ 
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', member_path %>

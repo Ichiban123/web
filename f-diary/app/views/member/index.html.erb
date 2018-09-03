@@ -1,28 +1,38 @@
-
 <div class="navbar">
-  <a href="#home"></a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
+  <a href="#home">ㅁㄴㅇㄹ</a>
+  <a href="#news">ㅁㄴㅇㄻㄴㅇㄹ</a>
+  <a href="#contact">ㅁㄴㅇㄹㄴㅇㄹ</a>
 </div>
 
 <div class="row">
   <div class="column side"></div>
   <div class="column middle">  
-  <%= link_to '새글 작성하기', new_member_path %>
-
+<br>
+<br>
+<br>
+<h1>Listing Articles</h1>
+<%= link_to 'New food', new_member_path %>
+<table>
+  <tr>
+    <th>제목</th>
+    <th>내용</th>
+    <th colspan="3"></th>
+  </tr>
+ 
   <% @member.each do |member| %>
     <%#페이지를 디자인 하고 데이터를 넣고 싶은 장소를 설정함%>
-  
-  
-      <%= member.id %>
-      <%= member.food %>
-      <%= link_to '보기', member_path(member) %>
-      <%= link_to '수정', edit_member_path(member) %>
-      <%= link_to '삭제', member_path(member),
+    <tr>
+   
+      <td><%= member.id %></td>
+      <td><%= member.food %></td>
+      <td><%= link_to '보기', member_path(member) %></td>
+      <td><%= link_to '수정', edit_member_path(member) %></td>
+      <td><%= link_to '삭제', member_path(member),
               method: :delete,
-              data: { confirm: '다이어리 삭제' } %>
+              data: { confirm: '삭제하시겠습니까?' } %></td>
+    </tr>  
     
-    </div>
+   </div>
     <% end %>
     <div class="column side"></div>
 </div>
